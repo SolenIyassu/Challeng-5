@@ -1,4 +1,4 @@
-let save1 = document.querySelector(".save1");
+let save1 = document.getElementById("s1");
 
 let Activity = document.querySelector("#form-control");
 
@@ -11,6 +11,8 @@ let Activity = document.querySelector("#form-control");
 
 // localStorage.setItem(key, added);
 // console.log(localStorage)
+// });
+
 var currentTime = document.querySelector(".currentHour");
 var timeBlock1 = document.querySelector(".input-group-text");
 
@@ -30,9 +32,12 @@ window.setInterval(() => {
 // let lastTime = lastTime < current;
 // let now = current;
 // let futureTime = futureTime < current;
+
+// getting timeblocks setup
 let currentIndex = 0;
 
-var input1 = document.querySelector("#inputPlan1");
+var input1 = document.querySelector("#box1");
+let inputValue1  = document.querySelector("#inputPlan1");
 var input2 = document.querySelector("#inputPlan2");
 var input3 = document.querySelector("#inputPlan3");
 var input4 = document.querySelector("#inputPlan4");
@@ -96,7 +101,7 @@ let currentTimeBlock = [
 ];
 
 function changeHourColor() {
-  const hour = presentHour();
+ let hour = presentHour();
 
   if (hour == currentTimeBlock[0]) {
     input1.style.backgroundColor = "lightgreen";
@@ -141,18 +146,18 @@ function changeHourColor() {
     input6.style.backgroundColor = "green";
   }
   if (hour == currentTimeBlock[6]) {
-    input2.style.backgroundColor = "orange";
+    input7.style.backgroundColor = "orange";
   } else if (hours < hourBlock1) {
     input7.style.backgroundColor = "blue";
   } else {
     input7.style.backgroundColor = "green";
   }
   if (hour == currentTimeBlock[7]) {
-    input2.style.backgroundColor = "orange";
+    input8.style.backgroundColor = "orange";
   } else if (hours < currentTimeBlock[7]) {
-    input2.style.backgroundColor = "blue";
+    input8.style.backgroundColor = "blue";
   } else {
-    input2.style.backgroundColor = "green";
+    input8.style.backgroundColor = "green";
   }
   if (hour == currentTimeBlock[8]) {
     input2.style.backgroundColor = "orange";
@@ -186,14 +191,14 @@ function changeHourColor() {
 
 // function savePlan() {
 //
-save1.addEventListener("click", SaveFN1);
+save1.addEventListener("click", console.log(inputValue1.value))
 
-function SaveFN1() {
-  if (input1.length > 0) {
-    console.log(input1.value);
-    localStorage.setItem("save1", input1.value);
-  }
-}
+// function SaveFN1() {
+// //   if (inputValue1.length > 0) {
+//     console.log(inputValue1.value);
+//     localStorage.setItem("save1", inputValue1.value);
+  
+// }
 
 // localStorage.setItem( 'save', '')
 // if ().target.nodeName === 'svg'){
